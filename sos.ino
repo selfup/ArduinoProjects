@@ -1,28 +1,34 @@
+int led = 13;
+int dotDelay = 1000;
+int dashDelay = 3000;
+int startLoopDelay = 7000;
+
 void setup() {
   pinMode(led, OUTPUT);
 }
 
 void dash() {
   digitalWrite(led, HIGH);
-  delay(3000);
+  delay(dashDelay);
   digitalWrite(led, LOW);
-  delay(3000);
+  delay(dashDelay);
 }
 
 void dot() {
   digitalWrite(led, HIGH);
-  delay(1000);
+  delay(dotDelay);
   digitalWrite(led, LOW);
-  delay(1000);
+  delay(dotDelay);
 }
 
-void startLoopDelay() {
+void startLoopPause() {
   digitalWrite(led, LOW);
-  delay(7000);
+  delay(startLoopDelay);
 }
 
 void loop() {
-  startLoopDelay();
+  // Make a long pause to indicate the message is stopping/going to begin
+  startLoopPause();
 
   // S
   dot();
@@ -39,4 +45,3 @@ void loop() {
   dot();
   dot();
 }
-
