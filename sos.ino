@@ -16,13 +16,13 @@ void dot() {
   delay(1000);
 }
 
-void startLoop() {
+void startLoopDelay() {
   digitalWrite(led, LOW);
   delay(7000);
 }
 
 void loop() {
-  startLoop();
+  startLoopDelay();
 
   // S
   dot();
