@@ -7,22 +7,30 @@ void setup() {
   pinMode(led, OUTPUT);
 }
 
-void dash() {
+void ledOn() {
   digitalWrite(led, HIGH);
-  delay(dashDelay);
+}
+
+void ledOff() {
   digitalWrite(led, LOW);
+}
+
+void dash() {
+  ledOn();
+  delay(dashDelay);
+  ledOff();
   delay(dashDelay);
 }
 
 void dot() {
-  digitalWrite(led, HIGH);
+  ledOn();
   delay(dotDelay);
-  digitalWrite(led, LOW);
+  ledOff();
   delay(dotDelay);
 }
 
 void startLoopPause() {
-  digitalWrite(led, LOW);
+  ledOff();
   delay(startLoopDelay);
 }
 
